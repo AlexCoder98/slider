@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="slider">
+        <button class="btn" data-btn="next">
+            <span class="material-symbols-outlined">arrow_forward_ios</span></button>
+        <button class="btn" data-btn="prev">
+            <span class="material-symbols-outlined">arrow_back_ios_new</span></button>
+        <div class="sea-quotes-container" data-sea-quotes>
+
+        </div>
+        <div class="slides-container" data-slides-container>
+        </div>
+        <div class="date-container">
+            <h1 class="time" data-h1-time><span class="hours"></span>:<span class="minutes"></span>:<span
+                    class="seconds"></span></h1>
+            <p class="date" data-date></p>
+        </div>
+    </div>
+
+    <script type="module" src="./dist/slider.js"></script>
+</body>
+
+</html>

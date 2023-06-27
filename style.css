@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+#slider {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#slider .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#slider .btn .material-symbols-outlined {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, .8);
+    text-shadow: 0 0 8px rgb(77, 77, 77);
+    transition-duration: .3s;
+}
+
+#slider .btn .material-symbols-outlined:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+#slider .btn[data-btn="next"] {
+    right: 1%;
+}
+
+#slider .btn[data-btn="prev"] {
+    left: 1%;
+}
+
+#slider .slides-container {
+    width: 100%;
+    height: 100%;
+}
+
+#slider .slides-container>* {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+@keyframes slideAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#slider .date-container {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 80%;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgb(19, 19, 19);
+}
+
+#slider .date-container .time {
+    font-size: 100px;
+    font-weight: lighter;
+}
+
+#slider .date-container .date {
+    margin-top: -12px;
+    font-size: 50px;
+    text-indent: 6px;
+}
+
+#slider .sea-quotes-container {
+    width: 40%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 2;
+}
+
+#slider .sea-quotes-container p {
+    display: none;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 5px rgb(19, 19, 19);
+    font-weight: 300;
+    text-align: justify;
+}
+
+#slider .sea-quotes-container p .quote {
+    font-family: 'Kalan', cursive, sans-serif;
+    font-style: italic;
+    font-size: 24px;
+}
+
+#slider .sea-quotes-container p .author {
+    display: block;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: right;
+}
+
+#slider .slides-container>*,
+#slider .sea-quotes-container p {
+    animation: slideAnimation 1s linear;
+    animation-delay: .2s;
+}
+
+#slider .slides-container .slide[data-slide="active"],
+#slider .sea-quotes-container p[data-quote="active"] {
+    display: block;
+    animation-delay: 0s;
+}
+
+@media (max-width: 1280px) {
+    #slider .sea-quotes-container {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #slider .sea-quotes-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    #slider .date-container {
+        text-align: center;
+    }
+
+    #slider .sea-quotes-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 418px) and (orientation: portrait) {
+    #slider {
+        overflow-x: hidden;
+    }
+
+    #slider .sea-quotes-container p .quote {
+        font-size: 22px;
+    }
+
+    #slider .sea-quotes-container p .author {
+        font-size: 24px;
+    }
+
+    #slider .date-container {
+        width: 90%;
+        right: 5%;
+    }
+
+    #slider .date-container .time {
+        font-size: 90px;
+    }
+
+    #slider .date-container .date {
+        margin-top: -10px;
+        font-size: 45px;
+        text-indent: 0;
+    }
+}
+
+@media (max-width: 281px) and (orientation: portrait) {
+
+    #slider .sea-quotes-container p .quote {
+        font-size: 16px;
+    }
+
+    #slider .sea-quotes-container p .author {
+        font-size: 20px;
+    }
+
+    #slider .date-container {
+        width: 90%;
+        right: 5%;
+    }
+
+    #slider .date-container .time {
+        font-size: 65px;
+    }
+
+    #slider .date-container .date {
+        margin-top: -8px;
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 655px) and (max-height: 281px) and (orientation: landscape) {
+    #slider .sea-quotes-container p .quote {
+        font-size: 16px;
+    }
+
+    #slider .sea-quotes-container p .author {
+        font-size: 20px;
+    }
+
+    #slider .date-container {
+        bottom: 5%;
+    }
+
+    #slider .date-container .time {
+        font-size: 50px;
+    }
+
+    #slider .date-container .date {
+        margin-top: -6px;
+        font-size: 28px;
+    }
+}
